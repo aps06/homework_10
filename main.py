@@ -10,18 +10,12 @@ class Field:
 
 
 class Name(Field):
-    def __init__(self, name):
-        self.value = name
+    pass
 
 
 class Phone(Field):
-
     def __init__(self, phone):
-        corect = False
-        for i in phone:
-            if i not in '0123456789':
-                corect = True
-        if corect or len(phone) != 10:
+        if (not phone.isdigit()) or len(phone) != 10:
             raise ValueError
         self.value = phone
 
